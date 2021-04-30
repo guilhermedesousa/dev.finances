@@ -67,6 +67,7 @@ button {
   opacity: 0.8;
   color: #fff;
   font-family: "Poppins", sans-serif;
+  font-size: 1rem;
 
   padding: 0;
 
@@ -152,6 +153,7 @@ header {
 /* Table ================================ */
 #transaction {
   display: block;
+  width: 100%;
   overflow-x: auto;
 }
 
@@ -170,6 +172,11 @@ table tbody tr td:first-child {
 table thead tr th:last-child,
 table tbody tr td:last-child {
   border-radius: 0 0.25rem 0.25rem 0;
+  text-align: center;
+}
+
+table tbody tr td:last-child img {
+  cursor: pointer;
 }
 
 table thead tr th {
@@ -192,14 +199,6 @@ table tbody tr {
 
 table tbody tr:hover {
   opacity: 1;
-}
-
-table tbody tr td:last-child {
-  text-align: center;
-}
-
-table tbody tr td:last-child img {
-  cursor: pointer;
 }
 
 td.income {
@@ -226,6 +225,8 @@ td.expense {
 
   opacity: 0;
   visibility: hidden;
+
+  z-index: 999;
 }
 
 .modal-overlay.active {
@@ -234,10 +235,9 @@ td.expense {
 }
 
 .modal {
-  /* background-color: #f0f2f5; */
   background-color: #1b1919;
   padding: 2.4rem;
-  border: 3px solid var(--ice-white);
+  border: 2px solid var(--ice-white);
   border-radius: 0.25rem;
 
   position: relative;
@@ -247,7 +247,6 @@ td.expense {
 /* Form ================================ */
 #form {
   max-width: 500px;
-  font-family: "Poppins", sans-serif;
 }
 
 #form h2 {
@@ -268,7 +267,7 @@ input {
 
 input:focus {
   outline: none;
-  border: 2px solid var(--green);
+  border: 2px solid var(--dark-purple);
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -309,12 +308,12 @@ footer {
 
 @media (min-width: 800px) {
   html {
-    font-size: 87.5%;
+    font-size: 87.5%; /* 14px */
   }
 
   #balance {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
 }
